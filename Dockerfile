@@ -114,6 +114,8 @@ COPY httpd-vhosts.conf /usr/local/apache2/conf/extra/
 #	-e "s/^#LoadModule proxy_module/LoadModule proxy_module/" \
 #	/usr/local/apache2/conf/httpd.conf
 
+ENV MyVer="version 1.0.2"
+
 EXPOSE 80
 
 CMD ["httpd-foreground"]
