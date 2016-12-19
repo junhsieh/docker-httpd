@@ -104,6 +104,16 @@ RUN set -x \
 
 COPY httpd-foreground /usr/local/bin/
 
+COPY httpd.conf /usr/local/apache2/conf/
+COPY httpd-vhosts.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
+
+# Configure httpd.conf
+#RUN sed -i \
+#	-e "s/^#LoadModule proxy_module/LoadModule proxy_module/" \
+#	-e "s/^#LoadModule proxy_fcgi_module/LoadModule rewrite_module/" \
+#	-e "s/^#LoadModule proxy_module/LoadModule proxy_module/" \
+#	/usr/local/apache2/conf/httpd.conf
+
 EXPOSE 80
 
 CMD ["httpd-foreground"]
