@@ -105,7 +105,7 @@ RUN set -x \
 COPY httpd-foreground /usr/local/bin/
 
 COPY httpd.conf /usr/local/apache2/conf/
-COPY httpd-vhosts.conf /usr/local/apache2/conf/extra/httpd-vhosts.conf
+COPY httpd-vhosts.conf /usr/local/apache2/conf/extra/
 
 # Configure httpd.conf
 #RUN sed -i \
