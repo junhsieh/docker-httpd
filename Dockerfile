@@ -9,7 +9,7 @@ RUN cd /usr/local/apache2/conf/ \
 	&& mv -f httpd.conf.AWK httpd.conf \
 	&& sed -i \
 		   -e "s/^#LoadModule proxy_module/LoadModule proxy_module/" \
-		   -e "s/^#LoadModule proxy_http_module/LoadModule proxy_http_module/" \
+		   -e "s/^#LoadModule proxy_fcgi_module/LoadModule proxy_fcgi_module/" \
 		   -e "s/^#LoadModule rewrite_module/LoadModule rewrite_module/" \
 		   -e "s/^#Include conf\/extra\/httpd-vhosts.conf/Include conf\/extra\/httpd-vhosts.conf/" \
 		   httpd.conf \
